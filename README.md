@@ -5,6 +5,8 @@ Telegram channel bot scraper that saves the content locally:
 - media (photo/video)
 - documents
 
+To make it happen you just need to invite your bot to the channel! Easy!
+
 File format
 - for messages is `{YYYY-MM-DD_HH-mm-ss}_{message_id}`
 - for media and files `{YYYY-MM-DD_HH-mm-ss}_{file_id}`
