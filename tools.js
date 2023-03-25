@@ -52,6 +52,7 @@ module.exports.saveMessage = async ({ bot, msg }) => {
   const fileName = `${msgDate}_${msg.message_id}`;
   const filePath = `${folderName}/messages/${fileName}.json`;
   await fs.promises.writeFile(filePath, JSON.stringify(msg, null, 2));
+  console.log(`Message saved to ${filePath}`);
 
   // If the message contains a photo, video or document then download it to a specific folder
   if (msg.photo) {

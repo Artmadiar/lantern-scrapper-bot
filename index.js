@@ -14,17 +14,15 @@ console.log('bot is listening');
 
 // Listen for messages
 bot.on('channel_post', (msg) => {
-  console.log(msg);
   saveMessage({ bot, msg });
 });
 
 // Listen for edited messages
 bot.on('edited_channel_post', (msg) => {
-  console.log(msg);
   saveMessage({ bot, msg });
 });
 
 // show errors
 bot.on('polling_error', (error) => {
-  console.log(error.code);  // => 'EFATAL'
+  console.error(error);  // => 'EFATAL'
 });
