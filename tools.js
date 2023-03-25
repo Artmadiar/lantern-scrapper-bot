@@ -20,6 +20,17 @@ async function checkFolder(folderName) {
 }
 
 /**
+ * Return count of files in folder
+ * @param {string} folderPath 
+ * @returns {number}
+ */
+async function getFileCount(folderPath) {
+  // Get a list of all files in the folder
+  const fileNames = await fs.promises.readdir(folderPath);
+  return fileNames.length;
+}
+
+/**
  * Download a file
  * @param {Object} bot Telegram bot instance
  * @param {Object} file file info
@@ -81,4 +92,16 @@ module.exports.saveMessage = async ({ bot, msg }) => {
       date: msgDate,
     });
   }
+};
+
+module.exports.getStatus = async (channel) => {
+  const channelFolder = path.resolve(__dirname, `./data/${channel}/messages`);
+
+  if (!fs.existsSync(channelFolder)) {
+    return `There is no channel @${channel}`;
+  }
+
+  const count = await getFileCount(channelFolder);
+
+  return `There are ${count} stored messages in the channel @${channel}`;
 };
