@@ -1,7 +1,7 @@
 # lantern-scrapper-bot
 
 Telegram channel bot scraper that saves the content locally:
-- messages into json files in the format
+- messages into raw json
 - media (photo/video)
 - documents
 
