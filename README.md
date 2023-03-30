@@ -16,12 +16,16 @@ File format
 
 ## Development
 
-1. copy .env.example file for your local .env and set vars
-2. npm i
-3. npm run dev (it requires nodemon)
+1. copy `.env.example` file for your local `.env` and set vars
+2. create your telegram bot by [instruction](/telegram-bot.md)
+3. `npm i`
+4. Check that you have folder `data` in the root of the app
+5. `npm run dev` (it requires nodemon)
 
 ## Production
 
-1. copy .env.example file for your local .env and set vars
-2. npm i
-3. pm2 start (it requires pm2)
+1. copy `.env.example` file for your local `.env` and set vars
+2. create your telegram bot by [instruction](/telegram-bot.md)
+3. `npm i`
+4. Check that you have folder `data` in the root of the app
+5. `pm2 start index.js` (it requires pm2)
